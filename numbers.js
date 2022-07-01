@@ -5,8 +5,20 @@ function twoSum(array1, array2) {
 }
 
 function luckyNumber(value) {
-  
+  let reversed = Number(value.toString().split("").reverse().join(""));
+  if (value === reversed) {
+    return Boolean(1)
+  }
+  return Boolean(0)
 }
 
-luckyNumber(1441); //=>  true
-luckyNumber(123); //=> false
+function errorMessage(input) {
+    if (!input) {
+        return 'Required field'
+      }
+      return Number(input) ? '' : 'Must be a number besides 0'
+}
+
+console.log(errorMessage('123')); // => ''
+console.log(errorMessage('')); // => 'Required field'
+console.log(errorMessage('abc')); // => 'Must be a number besides 0'
